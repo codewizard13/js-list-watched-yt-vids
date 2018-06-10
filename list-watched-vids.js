@@ -20,13 +20,19 @@ Requires:
 console.clear();
 
 // var selector = "#video-title";
-var selector = "#title-wrapper h3 > a";
+// var selector = "#title-wrapper h3 > a";
+var selector = "ytd-video-renderer.style-scope.ytd-item-section-renderer";
 
-var listItems = document.querySelectorAll(selector);
+var rows = document.querySelectorAll(selector);
 
-Array.from(listItems).forEach(function (item, i) {
+Array.from(rows).forEach(function (row, i) {
   
-  console.log(item.innerText);
+  // console.log(row.innerText);
+  var url = row.querySelector('#video-title');
+  var vidTitle = row.querySelector('#title-wrapper h3 > a').innerText;
+  console.log("%c%d                                                ", "background: orange", (i+1));
+  console.log("Video Title:\t" + vidTitle);
+  console.log("URL:\t" + url);
 
 });
 
